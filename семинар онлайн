@@ -1,0 +1,8 @@
+a=[1,2,3,4,5]
+b=[]
+for i in range(len(a)):
+    if i %2 == 0:
+        b.append(a[i+1])
+    if i %2 == 1:
+        b.append(a[i-1])
+print(b)
