@@ -1,0 +1,10 @@
+a = list(map(int, input('введите нечетное колво различных чисел через пробел: ').split()))
+c = len(a) // 2
+for i in range(len(a)):
+    d = 0  
+    for b in range(len(a)):
+        if a[i] > a[b]:
+            d += 1
+    if d == c:  
+        print(a[i])
+        break   
