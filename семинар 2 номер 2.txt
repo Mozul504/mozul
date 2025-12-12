@@ -1,0 +1,12 @@
+G = int(input().strip())
+S = input().strip()
+n = len(S)
+group_len = n // G
+result = []
+for i in range(G):
+    start = i * group_len
+    end = start + group_len
+    group = S[start:end]
+    reversed_group = group[::-1]
+    result.append(reversed_group)
+print(''.join(result))
