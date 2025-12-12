@@ -1,0 +1,21 @@
+N = input().strip()
+b = int(input())
+c = int(input())
+
+
+d = 0
+for i in N:
+    d = d * b + int(i)
+
+
+r = ""
+t = d
+while t > 0:
+    r = str(t % c) + r
+    t //= c
+
+if d == 0:
+    r = "0"
+
+
+print(r)
