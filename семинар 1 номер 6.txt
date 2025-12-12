@@ -1,0 +1,45 @@
+
+with open('input.txt', 'r') as f:
+    chisla = f.readline().split()  
+    operaciya = f.readline().strip()  
+    osnovanie = int(f.readline())    
+
+
+desyatichnye = []
+for chislo in chisla:
+    des = int(chislo, osnovanie) 
+    desyatichnye.append(des)
+
+
+if operaciya == '+':
+    resultat = desyatichnye[0] + desyatichnye[1]
+elif operaciya == '-':
+    resultat = desyatichnye[0] - desyatichnye[1]
+elif operaciya == '*':
+    resultat = desyatichnye[0] * desyatichnye[1]
+
+
+def v_sistemu(chislo, osn):
+    if chislo == 0:
+        return '0'
+    cifry = []
+    otricatelnoe = chislo < 0
+    chislo = abs(chislo)
+    while chislo > 0:
+        ostatok = chislo % osn
+        if ostatok < 10:
+            cifry.append(str(ostatok))
+        else:
+           
+            cifry.append(chr(ord('A') + ostatok - 10))
+        chislo = chislo // osn
+    
+    cifry.reverse()
+    res = ''.join(cifry)
+    if otricatelnoe:
+        res = '-' + res
+    return res
+
+itog = v_sistemu(resultat, osnovanie)
+with open('output.txt', 'w') as f:
+    f.write(itog)
