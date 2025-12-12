@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.arange(-10.,10.,0.2)
+y = np.tanh(x)
+
+derivative = (y[1:]-y[:-1])/0.5
+
+plt.figure(figsize=(8,5))
+
+plt.scatter(x,y,label='qwe',marker=8)
+plt.plot(x[:-1],derivative,label=())
+
+plt.grid(True)
+
+plt.title('ltl')
+
+plt.xlabel('fghj')
+plt.ylabel('777')
+
+plt.legend()
+
+plt.show()
